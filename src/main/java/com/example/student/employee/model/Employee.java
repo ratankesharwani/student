@@ -12,23 +12,23 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column
+    @Column(nullable = false,length = 20)
     private String firstName;
 
-    @Column
+    @Column(nullable = true, length = 20)
     private String middleName;
 
-    @Column
+    @Column(nullable = false, length = 20)
     private String lastName;
 
     @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.REFRESH)
-    @JoinColumn
+    @JoinColumn(nullable = false)
     private Address address;
 
-    @Column
+    @Column(nullable = false)
     private String email;
 
-    @Column
+    @Column(nullable = false,length = 20)
     private String phoneNumber;
 
     @Column
